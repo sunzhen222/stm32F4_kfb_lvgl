@@ -42,4 +42,7 @@ f4_20191211\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.
 f4_20191211\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
 f4_20191211\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM4F/portmacro.h
 f4_20191211\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+f4_20191211\main.o: ..\drv\HardwareInit.h
+f4_20191211\main.o: ../Src/common.h
 f4_20191211\main.o: ..\tasks\TestTask.h
+f4_20191211\main.o: ..\tasks\lvglTask.h

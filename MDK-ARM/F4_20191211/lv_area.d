@@ -1,0 +1,9 @@
+f4_20191211\lv_area.o: ..\lvgl\src\lv_misc\lv_area.c
+f4_20191211\lv_area.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_area.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+f4_20191211\lv_area.o: ..\lvgl/src/lv_conf_checker.h
+f4_20191211\lv_area.o: ..\lvgl\src\lv_misc\lv_area.h
+f4_20191211\lv_area.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+f4_20191211\lv_area.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+f4_20191211\lv_area.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_area.o: ..\lvgl\src\lv_misc\lv_math.h

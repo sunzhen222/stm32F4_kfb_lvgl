@@ -1,0 +1,10 @@
+f4_20191211\lv_mem.o: ..\lvgl\src\lv_misc\lv_mem.c
+f4_20191211\lv_mem.o: ..\lvgl\src\lv_misc\lv_mem.h
+f4_20191211\lv_mem.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+f4_20191211\lv_mem.o: ..\lvgl/src/lv_conf_checker.h
+f4_20191211\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+f4_20191211\lv_mem.o: ..\lvgl\src\lv_misc\lv_log.h
+f4_20191211\lv_mem.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_mem.o: ..\lvgl\src\lv_misc\lv_math.h
+f4_20191211\lv_mem.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

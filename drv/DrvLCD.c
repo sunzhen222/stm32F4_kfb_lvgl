@@ -36,18 +36,20 @@ void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
 {
 	if(DeviceCode==0x8989)
 	{
-		LCD_WriteReg(0x004e,Xpos);        //行
-		LCD_WriteReg(0x004f,Ypos);  //列
+		//LCD_WriteReg(0x004e,Xpos);
+		//LCD_WriteReg(0x004f,Ypos);
+		LCD_WriteReg(0x004F,Xpos);
+		LCD_WriteReg(0x004E,Ypos);
 	}
 	else if(DeviceCode==0x9325)
 	{
-		LCD_WriteReg(0x0020,Xpos); // 行
-		LCD_WriteReg(0x0021,0x13f-Ypos); // 列	
+		LCD_WriteReg(0x0020,Xpos);
+		LCD_WriteReg(0x0021,0x13f-Ypos);
 	}
 	else
 	{
-		LCD_WriteReg(0x0020,Ypos); // 行
-		LCD_WriteReg(0x0021,0x13f-Xpos); // 列
+		LCD_WriteReg(0x0020,Ypos);
+		LCD_WriteReg(0x0021,0x13f-Xpos);
 	}
 	//LCD_WriteReg(LCD_REG_32, Xpos);
 	//LCD_WriteReg(LCD_REG_33, Ypos);
@@ -64,11 +66,46 @@ void LCD_Clear(uint16_t Color)
 {
     uint32_t index = 0;
     
-    LCD_SetCursor(0x00, 0x013F); 
-    LCD_WriteRAM_Prepare(); /* Prepare to write GRAM */
-    for(index = 0; index < 76800; index++)
+    //LCD_SetCursor(0x00, 0x013F);
+    
+    LCD_SetCursor(0, 0);
+    LCD_WriteRAM_Prepare();
+    for(index = 0; index < 320*240; index++)
     {
-    LCD->LCD_RAM = Color;
+        LCD->LCD_RAM = Color;
+    }
+}
+
+    uint16_t draw_x, draw_y;
+    uint16_t start_x,start_y,end_x,end_y;
+void LCD_Draw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t *pColor)
+{
+
+    
+    if(xStart < xEnd) {
+        start_x = xStart;
+        end_x = xEnd;
+    }
+    else {
+        start_x = xEnd;
+        end_x = xStart;
+    }
+    if(yStart < yEnd) {
+        start_y = yStart;
+        end_y = yEnd;
+    }
+    else {
+        start_y = yEnd;
+        end_y = yStart;
+    }
+    
+    for(draw_y = start_y; draw_y <= end_y; draw_y++) {
+        LCD_SetCursor(start_x, draw_y);
+        LCD_WriteRAM_Prepare();
+        for(draw_x = start_x; draw_x <= end_x; draw_x++) {
+            LCD->LCD_RAM = *pColor;
+            pColor++;
+        }
     }
 }
 

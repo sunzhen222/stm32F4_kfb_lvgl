@@ -157,7 +157,7 @@ void LCD_Init(void);
 
 void _delay_(uint32_t ms);
 
-
+void LCD_Draw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t *pColor);
 #endif
 
 

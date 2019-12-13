@@ -1,0 +1,12 @@
+f4_20191211\lv_font.o: ..\lvgl\src\lv_font\lv_font.c
+f4_20191211\lv_font.o: ..\lvgl\src\lv_font\lv_font.h
+f4_20191211\lv_font.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_font.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+f4_20191211\lv_font.o: ..\lvgl/src/lv_conf_checker.h
+f4_20191211\lv_font.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+f4_20191211\lv_font.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+f4_20191211\lv_font.o: ..\lvgl\src\lv_font\lv_symbol_def.h
+f4_20191211\lv_font.o: ..\lvgl\lv_conf.h
+f4_20191211\lv_font.o: ..\lvgl\src\lv_font\../lv_misc/lv_utils.h
+f4_20191211\lv_font.o: ..\lvgl\src\lv_font\../lv_misc/lv_log.h
+f4_20191211\lv_font.o: ..\lvgl\lv_conf.h
