@@ -39,7 +39,11 @@ f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h
+f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h
 f4_20191211\testtask.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h
 f4_20191211\testtask.o: ..\drv\DrvLCD.h
+f4_20191211\testtask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+f4_20191211\testtask.o: ..\tasks\lvglTask.h
+f4_20191211\testtask.o: ..\drv\DrvTouchScreen.h

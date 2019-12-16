@@ -29,6 +29,8 @@ void drawTest(void)
     LCD_Draw(100,50,120,100,temp_color);
 }
 
+lv_obj_t *testText = NULL;
+
 void LvglTask(void *pvParameters)
 {
     vTaskDelay(500);
@@ -55,6 +57,9 @@ void LvglTask(void *pvParameters)
     //lv_label_set_text(label1, "button");
     
     
+    testText = lv_label_create(lv_scr_act(), NULL);
+    lv_obj_set_pos(testText, 100, 100);
+    lv_label_set_text(testText, "text");
     
     while(1) {
         lv_task_handler();
@@ -63,7 +68,14 @@ void LvglTask(void *pvParameters)
     }
 }
 
-
+void SetTestText(char* str)
+{
+    if(testText == NULL) {
+        return ;
+    }
+    
+    lv_label_set_text(testText, str);
+}
 
 
 

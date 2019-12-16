@@ -42,7 +42,7 @@ void StartDefaultTask(void *argument);
 int main(void)
 {
     HAL_Init();
-    
+
     /* Configure the system clock */
     SystemClock_Config();
     
@@ -50,24 +50,23 @@ int main(void)
     MX_GPIO_Init();
     MX_FMC_Init();
     MX_USART1_UART_Init();
-    
-    
+    MX_SPI2_Init();
+
     HAL_UART_Receive_IT(&huart1, (uint8_t *)&uart1_rx_byte, 1);
-    
+
     osKernelInitialize();
-    
+
     const osThreadAttr_t defaultTask_attributes = {
     .name = "defaultTask",
     .priority = (osPriority_t) osPriorityNormal,
-    .stack_size = 128
+    .stack_size = 512
     };
     defaultTaskHandle = osThreadNew(StartDefaultTask, NULL, &defaultTask_attributes);
-    
-    
+
     const osThreadAttr_t testTaskAttributes = {
     .name = "TestTask",
     .priority = (osPriority_t) osPriorityNormal,
-    .stack_size = 128
+    .stack_size = 512
     };
     testTaskHandle = osThreadNew(TestTask, NULL, &testTaskAttributes);
 
@@ -78,13 +77,11 @@ int main(void)
     };
     lvglTaskHandle = osThreadNew(LvglTask, NULL, &lvglTaskAttributes);
 
-    
-    
     /* Start scheduler */
     osKernelStart();
-    
+
     /* We should never get here as control is now taken by the scheduler */
-    
+
     /* Infinite loop */
     while (1)
     {

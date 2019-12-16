@@ -6,7 +6,7 @@
 
 void LvglTask(void *pvParameters);
 
-
+void SetTestText(char* str);
 
 
 #endif
