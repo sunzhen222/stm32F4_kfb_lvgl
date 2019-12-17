@@ -76,11 +76,11 @@ void LCD_Clear(uint16_t Color)
     }
 }
 
-    uint16_t draw_x, draw_y;
-    uint16_t start_x,start_y,end_x,end_y;
+
 void LCD_Draw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t *pColor)
 {
-
+    uint16_t draw_x, draw_y;
+    uint16_t start_x,start_y,end_x,end_y;
     
     if(xStart < xEnd) {
         start_x = xStart;

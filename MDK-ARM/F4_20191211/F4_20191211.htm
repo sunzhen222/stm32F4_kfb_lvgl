@@ -3,7 +3,7 @@
 <title>Static Call Graph - [F4_20191211\F4_20191211.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image F4_20191211\F4_20191211.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Fri Dec 13 17:21:56 2019
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060750: Last Updated: Mon Dec 16 14:52:16 2019
 <BR><P>
 <H3>Maximum Stack Usage =        876 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -602,10 +602,10 @@ Global Symbols
 <LI><a href="#[1ff]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sw_color_fill
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_disp_refr_task
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_mem_realloc
-<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_ins
 <LI><a href="#[276]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;node_set_prev
 <LI><a href="#[277]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;node_set_next
 <LI><a href="#[1c6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_btnm_set_ctrl_map
+<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_ins
 <LI><a href="#[25c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_label_set_dot_tmp
 <LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ta_scrollable_design
 </UL>
@@ -678,10 +678,10 @@ Global Symbols
 <LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ta_add_text
 <LI><a href="#[186]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ta_add_char
 <LI><a href="#[21c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_fs_get_ext
-<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_ins
-<LI><a href="#[2b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_cut
 <LI><a href="#[1bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_btnm_set_map
 <LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;allocate_btn_areas_and_controls
+<LI><a href="#[262]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_ins
+<LI><a href="#[2b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_txt_cut
 <LI><a href="#[22e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_img_set_src
 <LI><a href="#[261]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_label_ins_text
 <LI><a href="#[24c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ta_del_char
@@ -796,12 +796,12 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[109]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(i.HAL_GPIO_WritePin))
-<BR><BR>[Called By]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SPI2_Init
+<BR><BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_SPI2_Init
 <LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MX_GPIO_Init
 <LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Init
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TestTask
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiSel
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
 </UL>
 
 <P><STRONG><a name="[de]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal.o(i.HAL_GetTick))
@@ -928,8 +928,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 120<LI>Call Chain = HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTransaction
 <LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTransaction
 </UL>
 <BR>[Called By]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiRead
 </UL>
@@ -1113,8 +1113,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LvglTask
 </UL>
 
-<P><STRONG><a name="[107]"></a>LCD_Draw</STRONG> (Thumb, 96 bytes, Stack size 20 bytes, drvlcd.o(i.LCD_Draw))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = LCD_Draw &rArr; LCD_SetCursor
+<P><STRONG><a name="[107]"></a>LCD_Draw</STRONG> (Thumb, 90 bytes, Stack size 32 bytes, drvlcd.o(i.LCD_Draw))
+<BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = LCD_Draw &rArr; LCD_SetCursor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_SetCursor
 </UL>
@@ -1302,8 +1302,8 @@ Global Symbols
 <P><STRONG><a name="[125]"></a>TouchGetXY_Pos</STRONG> (Thumb, 32 bytes, Stack size 24 bytes, drvtouchscreen.o(i.TouchGetXY_Pos))
 <BR><BR>[Stack]<UL><LI>Max Depth = 184<LI>Call Chain = TouchGetXY_Pos &rArr; TouchGetXY_ADC &rArr; TouchGetY_Value &rArr; TouchScreenSpiRead &rArr; HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetXY_ADC
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
+<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
+<LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetXY_ADC
 </UL>
 <BR>[Called By]<UL><LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TestTask
 </UL>
@@ -1311,10 +1311,10 @@ Global Symbols
 <P><STRONG><a name="[128]"></a>TouchGetX_Value</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, drvtouchscreen.o(i.TouchGetX_Value))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = TouchGetX_Value &rArr; TouchScreenSpiRead &rArr; HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiRead
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
+<BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiSel
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiRead
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetXY_ADC
 </UL>
@@ -1322,10 +1322,10 @@ Global Symbols
 <P><STRONG><a name="[129]"></a>TouchGetY_Value</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, drvtouchscreen.o(i.TouchGetY_Value))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144<LI>Call Chain = TouchGetY_Value &rArr; TouchScreenSpiRead &rArr; HAL_SPI_Receive &rArr; HAL_SPI_TransmitReceive &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiRead
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
+<BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiSel
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiRead
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetXY_ADC
 </UL>
@@ -1333,9 +1333,9 @@ Global Symbols
 <P><STRONG><a name="[123]"></a>TouchScreenIdle</STRONG> (Thumb, 26 bytes, Stack size 8 bytes, drvtouchscreen.o(i.TouchScreenIdle))
 <BR><BR>[Stack]<UL><LI>Max Depth = 96<LI>Call Chain = TouchScreenIdle &rArr; TouchScreenSpiWrite &rArr; HAL_SPI_Transmit &rArr; SPI_EndRxTxTransaction &rArr; SPI_WaitFlagStateUntilTimeout
 </UL>
-<BR>[Calls]<UL><LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
+<BR>[Calls]<UL><LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiWrite
 <LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiSel
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenSpiDesel
 </UL>
 <BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetXY_Pos
 <LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TestTask
@@ -1344,9 +1344,9 @@ Global Symbols
 <P><STRONG><a name="[12d]"></a>TouchScreenSpiDesel</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, drvtouchscreen.o(i.TouchScreenSpiDesel))
 <BR><BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
+<BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetX_Value
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
 </UL>
 
 <P><STRONG><a name="[12c]"></a>TouchScreenSpiRead</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, drvtouchscreen.o(i.TouchScreenSpiRead))
@@ -1361,9 +1361,9 @@ Global Symbols
 <P><STRONG><a name="[12a]"></a>TouchScreenSpiSel</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, drvtouchscreen.o(i.TouchScreenSpiSel))
 <BR><BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
+<BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetX_Value
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
 </UL>
 
 <P><STRONG><a name="[12b]"></a>TouchScreenSpiWrite</STRONG> (Thumb, 22 bytes, Stack size 8 bytes, drvtouchscreen.o(i.TouchScreenSpiWrite))
@@ -1371,9 +1371,9 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
+<BR>[Called By]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetY_Value
 <LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchGetX_Value
-<LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TouchScreenIdle
 </UL>
 
 <P><STRONG><a name="[38]"></a>USART1_IRQHandler</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_it.o(i.USART1_IRQHandler))
@@ -3496,11 +3496,11 @@ Global Symbols
 <LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_refr_get_top_obj
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_anim_del
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_obj_get_child
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[2bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_set_prio
 <LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_create_basic
 <LI><a href="#[278]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ll_ins_prev
 <LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_fs_get_drv
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_cont_refr_autofit
 <LI><a href="#[1e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_cont_layout_center
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_chart_signal
@@ -3524,10 +3524,10 @@ Global Symbols
 <LI><a href="#[29e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_refr_get_top_obj
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_anim_del
 <LI><a href="#[1e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_obj_get_child
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[2bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_set_prio
 <LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_create_basic
 <LI><a href="#[21b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_fs_get_drv
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[1ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_cont_refr_autofit
 <LI><a href="#[1e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_cont_layout_pretty
 <LI><a href="#[1e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_cont_layout_center
@@ -3658,9 +3658,9 @@ Global Symbols
 <LI><a href="#[1dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ll_clear
 <LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_group_remove_obj
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_anim_del
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_ready_handler
 <LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_del
 <LI><a href="#[279]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_ll_move_before
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_ready_handler
 </UL>
 
 <P><STRONG><a name="[139]"></a>lv_log_add</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, lv_log.o(i.lv_log_add))
@@ -3871,8 +3871,8 @@ Global Symbols
 <LI><a href="#[200]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_mem_realloc
 <LI><a href="#[22c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_img_cache_set_size
 <LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_anim_del
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_ready_handler
 <LI><a href="#[2c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_del
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_ready_handler
 <LI><a href="#[87]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_btnm_signal
 <LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;allocate_btn_areas_and_controls
 <LI><a href="#[89]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_chart_signal
@@ -5894,8 +5894,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_handler
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_img_cache_open
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_disp_refr_task
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[2c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_exec
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 </UL>
 
 <P><STRONG><a name="[13e]"></a>lv_tick_get</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, lv_hal_tick.o(i.lv_tick_get))
@@ -5905,10 +5905,10 @@ Global Symbols
 <LI><a href="#[22a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_img_cache_open
 <LI><a href="#[8c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_disp_refr_task
 <LI><a href="#[193]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_anim_core_init
-<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 <LI><a href="#[1f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_ready
 <LI><a href="#[2be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_create_basic
 <LI><a href="#[2c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_task_exec
+<LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;anim_task
 </UL>
 
 <P><STRONG><a name="[118]"></a>lv_tick_inc</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, lv_hal_tick.o(i.lv_tick_inc))
@@ -6004,7 +6004,7 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P><STRONG><a name="[72]"></a>my_disp_flush</STRONG> (Thumb, 30 bytes, Stack size 16 bytes, lvgltask.o(i.my_disp_flush))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44<LI>Call Chain = my_disp_flush &rArr; LCD_Draw &rArr; LCD_SetCursor
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = my_disp_flush &rArr; LCD_Draw &rArr; LCD_SetCursor
 </UL>
 <BR>[Calls]<UL><LI><a href="#[2c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;lv_disp_flush_ready
 <LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Draw
@@ -6547,8 +6547,8 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
 </UL>
-<BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTransaction
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTxTransaction
+<BR>[Called By]<UL><LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTxTransaction
+<LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_EndRxTransaction
 </UL>
 
 <P><STRONG><a name="[2d4]"></a>prvCopyDataFromQueue</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, queue.o(i.prvCopyDataFromQueue))

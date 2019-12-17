@@ -3,6 +3,8 @@
 "f4_20191211\lvgltask.o"
 "f4_20191211\idletask.o"
 "f4_20191211\soft_fifo.o"
+"f4_20191211\menu_data.o"
+"f4_20191211\menu_view.o"
 "f4_20191211\drvlcd.o"
 "f4_20191211\hardwareinit.o"
 "f4_20191211\drvtouchscreen.o"
