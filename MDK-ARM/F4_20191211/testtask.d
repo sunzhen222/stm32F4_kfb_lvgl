@@ -47,3 +47,4 @@ f4_20191211\testtask.o: ..\drv\DrvLCD.h
 f4_20191211\testtask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 f4_20191211\testtask.o: ..\tasks\lvglTask.h
 f4_20191211\testtask.o: ..\drv\DrvTouchScreen.h
+f4_20191211\testtask.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h

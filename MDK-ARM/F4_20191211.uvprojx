@@ -416,6 +416,11 @@
               <FileType>1</FileType>
               <FilePath>..\middle\menu_view.c</FilePath>
             </File>
+            <File>
+              <FileName>menu_ctrl.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\middle\menu_ctrl.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

@@ -6,6 +6,7 @@
 #include "DrvLCD.h"
 #include "lvgl.h"
 #include "lvgl_demo.h"
+#include "DrvTouchScreen.h"
 
 static lv_disp_buf_t disp_buf;
 static lv_color_t buf[LV_HOR_RES_MAX * 10];             /*Declare a buffer for 10 lines*/
@@ -15,6 +16,20 @@ void my_disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *c
 {
     LCD_Draw(area->x1,area->y1,area->x2,area->y2,(uint16_t *)color_p);
     lv_disp_flush_ready(disp_drv); /* Indicate you are ready with the flushing*/
+}
+
+bool my_touchpad_read(lv_indev_t * indev, lv_indev_data_t * data)
+{
+    static lv_coord_t last_x = 0;
+    static lv_coord_t last_y = 0;
+    /*Save the state and save the pressed coordinate*/
+    data->state = touchpadIsPressed() ? LV_INDEV_STATE_PR : LV_INDEV_STATE_REL;
+    if(data->state == LV_INDEV_STATE_PR) TouchGetXY_Pos(&last_x, &last_y);
+    /*Set the coordinates (if released use the last pressed coordinates)*/
+    data->point.x = last_x;
+    data->point.y = last_y;
+    return false; /*Return `false` because we are not buffering and no more data to?
+    ,!read*/
 }
 
 
@@ -46,20 +61,41 @@ void LvglTask(void *pvParameters)
     lv_disp_drv_register(&disp_drv);                    /*Finally register the driver*/
     
     
+    lv_indev_drv_t indev_drv; /*Descriptor of a input device driver*/
+    lv_indev_drv_init(&indev_drv); /*Basic initialization*/
+    indev_drv.type = LV_INDEV_TYPE_POINTER; /*Touch pad is a pointer-like device*/
+    indev_drv.read_cb = my_touchpad_read; /*Set your driver function*/
+    lv_indev_drv_register(&indev_drv); /*Finally register the driver*/
+    
+    
     demo_create();
     //drawTest();
-    //lv_obj_t *btn1 = lv_btn_create(lv_scr_act(), NULL);
-    //
-    //lv_obj_set_pos(btn1, 100, 100);
-    //lv_obj_set_size(btn1, 100, 50);
-    //
-    //lv_obj_t *label1 = lv_label_create(btn1, NULL);
-    //lv_label_set_text(label1, "button");
-    
     
     testText = lv_label_create(lv_scr_act(), NULL);
     lv_obj_set_pos(testText, 100, 100);
     lv_label_set_text(testText, "text");
+    
+    
+    lv_obj_t *ul;
+    ul = lv_label_create(lv_scr_act(), NULL);
+    lv_obj_set_pos(ul, 20, 20);
+    lv_label_set_text(ul, "0");
+
+    lv_obj_t *ur;
+    ur = lv_label_create(lv_scr_act(), NULL);
+    lv_obj_set_pos(ur, 300, 20);
+    lv_label_set_text(ur, "0");
+
+    lv_obj_t *dl;
+    dl = lv_label_create(lv_scr_act(), NULL);
+    lv_obj_set_pos(dl, 20, 220);
+    lv_label_set_text(dl, "0");
+
+    lv_obj_t *dr;
+    dr = lv_label_create(lv_scr_act(), NULL);
+    lv_obj_set_pos(dr, 300, 220);
+    lv_label_set_text(dr, "0");
+
     
     while(1) {
         lv_task_handler();

@@ -1,6 +1,7 @@
 f4_20191211\drvtouchscreen.o: ..\drv\DrvTouchScreen.c
 f4_20191211\drvtouchscreen.o: ..\drv\DrvTouchScreen.h
 f4_20191211\drvtouchscreen.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+f4_20191211\drvtouchscreen.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 f4_20191211\drvtouchscreen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
 f4_20191211\drvtouchscreen.o: ../Inc/stm32f4xx_hal_conf.h
 f4_20191211\drvtouchscreen.o: ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h

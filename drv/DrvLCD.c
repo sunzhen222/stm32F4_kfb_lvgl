@@ -43,8 +43,11 @@ void LCD_SetCursor(uint16_t Xpos, uint16_t Ypos)
 	}
 	else if(DeviceCode==0x9325)
 	{
-		LCD_WriteReg(0x0020,Xpos);
-		LCD_WriteReg(0x0021,0x13f-Ypos);
+		//LCD_WriteReg(0x0020,Xpos);
+		//LCD_WriteReg(0x0021,0x13f-Ypos);
+
+		LCD_WriteReg(0x0021,320-1-Xpos);
+        LCD_WriteReg(0x0020,Ypos);
 	}
 	else
 	{
@@ -99,12 +102,21 @@ void LCD_Draw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, ui
         end_y = yStart;
     }
     
-    for(draw_y = start_y; draw_y <= end_y; draw_y++) {
-        LCD_SetCursor(start_x, draw_y);
-        LCD_WriteRAM_Prepare();
-        for(draw_x = start_x; draw_x <= end_x; draw_x++) {
-            LCD->LCD_RAM = *pColor;
-            pColor++;
+    //for(draw_y = start_y; draw_y <= end_y; draw_y++) {
+    //    LCD_SetCursor(start_x, draw_y);
+    //    LCD_WriteRAM_Prepare();
+    //    for(draw_x = start_x; draw_x <= end_x; draw_x++) {
+    //        LCD->LCD_RAM = *pColor;
+    //        pColor++;
+    //    }
+    //}
+    
+        for(draw_y = start_y; draw_y <= end_y; draw_y++) {
+            for(draw_x = start_x; draw_x <= end_x; draw_x++) {
+                LCD_SetCursor(draw_x, draw_y);
+                LCD_WriteRAM_Prepare();
+                LCD->LCD_RAM = *pColor;
+                pColor++;
         }
     }
 }
@@ -118,17 +130,17 @@ uint16_t LCD_ReadReg(uint8_t LCD_Reg)
     return (LCD->LCD_RAM);
 }
 
-
+uint32_t lcdid = 0;
 void LCD_Init(void)
 {
-    volatile uint32_t lcdid = 0;
+    
     volatile uint32_t test = 0;
     GPIO_InitTypeDef GPIO_InitStruct = {0};
     
     
     __HAL_RCC_GPIOC_CLK_ENABLE();
     
-    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_SET);
+    HAL_GPIO_WritePin(GPIOC, GPIO_PIN_7, GPIO_PIN_RESET);
     
     GPIO_InitStruct.Pin = GPIO_PIN_7;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
@@ -299,7 +311,7 @@ void LCD_Init(void)
         LCD_WriteReg(LCD_REG_0, 0x0001); /* Start internal OSC. */
         LCD_WriteReg(LCD_REG_1, 0x0100); /* Set SS and SM bit */
         LCD_WriteReg(LCD_REG_2, 0x0700); /* Set 1 line inversion */
-        LCD_WriteReg(LCD_REG_3, 0x1018); /* Set GRAM write direction and BGR=1. */
+        //LCD_WriteReg(LCD_REG_3, 0x1018); /* Set GRAM write direction and BGR=1. */
         LCD_WriteReg(LCD_REG_4, 0x0000); /* Resize register */
         LCD_WriteReg(LCD_REG_8, 0x0202); /* Set the back porch and front porch */
         LCD_WriteReg(LCD_REG_9, 0x0000); /* Set non-display area refresh cycle ISC[3:0] */
@@ -366,7 +378,9 @@ void LCD_Init(void)
         /* set GRAM write direction and BGR = 1 */
         /* I/D=00 (Horizontal : increment, Vertical : decrement) */
         /* AM=1 (address is updated in vertical writing direction) */
-        LCD_WriteReg(LCD_REG_3, 0x1008);
+        //LCD_WriteReg(LCD_REG_3, 0x1008);
+        //LCD_WriteReg(LCD_REG_3, 0x1030);
+        LCD_WriteReg(LCD_REG_3, 0x1030);
         LCD_WriteReg(LCD_REG_7, 0x0133); /* 262K color and display ON */ 
     } 
 }

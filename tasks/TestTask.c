@@ -32,9 +32,9 @@ void TestTask(void *pvParameters)
     TouchScreenIdle();
     
     while(1) {
-        vTaskDelay(10);
-        //HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8);
-        HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8, GPIO_PIN_RESET);
+        vTaskDelay(100);
+        HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8);
+        //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_7|GPIO_PIN_8, GPIO_PIN_RESET);
         
         
         //touchX = TouchGetX_Value();
@@ -49,17 +49,17 @@ void TestTask(void *pvParameters)
         
         //HAL_GPIO_WritePin(GPIOF, GPIO_PIN_9, HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7));
         
-        if(HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) == GPIO_PIN_RESET)
-        {
-            TouchGetXY_Pos(&touchX, &touchY);
-            
-            sprintf(testStr,"touchX=%d\r\ntouchY=%d",touchX,touchY);
-            SetTestText(testStr);
-            
-            //count++;
-            //sprintf(testStr,"count=%d",count);
-            //SetTestText(testStr);
-        }
+        //if(HAL_GPIO_ReadPin(GPIOG, GPIO_PIN_7) == GPIO_PIN_RESET)
+        //{
+        //    TouchGetXY_Pos(&touchX, &touchY);
+        //    
+        //    sprintf(testStr,"touchX=%d\r\ntouchY=%d",touchX,touchY);
+        //    SetTestText(testStr);
+        //    
+        //    //count++;
+        //    //sprintf(testStr,"count=%d",count);
+        //    //SetTestText(testStr);
+        //}
     }
 }
 

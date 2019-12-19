@@ -22,23 +22,26 @@ typedef enum __SlidDirection
 }SlidDir;
 
 
+//列表子项描述结构体
 typedef struct __MenuItem
 {
-    char *text;
-    uint8_t textSize;
-    bool showImg;
-    uint32_t imgAddr;
-    void (*clickFunc)(SlidDir dir);
+    char *text;                             //文本内容
+    uint8_t hanSize;                        //文本字体大小
+    bool showImg;                           //是否显示图片
+    uint32_t imgAddr;                       //是否显示图片
+    void (*clickFunc)(void);                //子项点击回调函数
 }MenuItem;
 
 
+//菜单描述结构体
 typedef struct __MenuObj
 {
-    MenuType type;
-    void (*DrawCardFunc)(void);
-    void (*SlidFunc)(void);
-    uint8_t itemNum;
-    MenuItem items[];
+    MenuType type;                          //菜单类型(是列表还是卡片)
+    void (*DrawCardFunc)(void);             //卡片绘制函数(当卡片有效)
+    void (*SlidFunc)(SlidDir dir);          //滑动操作回调函数(当卡片有效)
+    uint8_t itemNum;                        //列表子项数量(当列表有效)
+    MenuItem *items;                        //列表子项数组(当列表有效)
+    struct __MenuObj *pre;                  //上级菜单，用于返回键返回上级菜单(列表卡片通用)
 }MenuObj;
 
 

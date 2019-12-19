@@ -186,3 +186,4 @@ f4_20191211\lvgltask.o: ..\lvgl\src/lv_objx/lv_spinbox.h
 f4_20191211\lvgltask.o: ..\lvgl\lv_conf.h
 f4_20191211\lvgltask.o: ..\lvgl\src/lv_draw/lv_img_cache.h
 f4_20191211\lvgltask.o: ..\lvgl\lvgl_demo.h
+f4_20191211\lvgltask.o: ..\drv\DrvTouchScreen.h
