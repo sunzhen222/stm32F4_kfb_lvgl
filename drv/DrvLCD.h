@@ -153,11 +153,56 @@ void LCD_WriteRAM_Prepare(void);
 void LCD_Clear(uint16_t Color);
 uint16_t LCD_ReadReg(uint8_t LCD_Reg);
 
+/*
+* LCD初始化
+*/
 void LCD_Init(void);
+
 
 void _delay_(uint32_t ms);
 
+
+/*
+* LCD绘图函数，作为绘图回调函数供图形库调用。
+* 根据像素数组内容绘制一个矩形区域，像素顺序是从上到下逐行，每行从左到右。
+* xStart, yStart, xEnd, yEnd: 矩形区域坐标。
+* *pColor: 像素数组(RGB565)
+*/
 void LCD_Draw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t *pColor);
+
+
+
+
+/*
+* LCD HAL层初始化
+*/
+void LcdInit(void);
+
+
+
+/*
+* LCD HAL层绘图函数，作为绘图回调函数供图形库调用。
+* 根据像素数组内容绘制一个矩形区域，像素顺序是从上到下逐行，每行从左到右。
+* xStart, yStart, xEnd, yEnd: 矩形区域坐标。
+* *pColor: 像素数组(RGB565)
+*/
+void LcdDraw(uint16_t xStart, uint16_t yStart, uint16_t xEnd, uint16_t yEnd, uint16_t *pColor);
+
+
+
+/*
+* LCD 驱动层初始化
+*/
+void lcd_init(void);
+
+
+
+
+
+
+
+
+
 #endif
 
 
