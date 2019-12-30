@@ -35,6 +35,21 @@ uint8_t TouchPadGetPos(uint16_t *ValueX,uint16_t *ValueY);
 
 
 
+/*
+* Touch key初始化
+*/
+void TouchKeyInit(void);
+
+
+/*
+* Touch key初始化
+*/
+void TouchKeyInit(void);
+
+
+
+
+
 
 
 void TouchGetXY_Pos(uint16_t *ValueX,uint16_t *ValueY);
