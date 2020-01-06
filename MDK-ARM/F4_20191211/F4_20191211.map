@@ -10767,7 +10767,7 @@ Image component sizes
        786         82          0         12          0      11405   port.o
       1512         20          0          0         64      17028   queue.o
        178          0          0          0          0       2557   soft_fifo.o
-        36          8        428          0       1024        792   startup_stm32f439xx.o
+        36          8        428          0       1024        788   startup_stm32f439xx.o
         80         14          0         12          0       3170   stm32f4xx_hal.o
        158         14          0          0          0      33082   stm32f4xx_hal_cortex.o
         36          0          0          0          0       1179   stm32f4xx_hal_dma.o
@@ -10789,7 +10789,7 @@ Image component sizes
        912         82          0         20        280      25979   timers.o
 
     ----------------------------------------------------------------------
-     99410       6992      10944       4188      63624    1927320   Object Totals
+     99410       6992      10944       4188      63624    1927316   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        150          0         16          0          6          0   (incl. Padding)
 
@@ -10840,8 +10840,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-    100392       7022      10944       4192      63624    1859936   Grand Totals
-    100392       7022      10944       2028      63624    1859936   ELF Image Totals (compressed)
+    100392       7022      10944       4192      63624    1859932   Grand Totals
+    100392       7022      10944       2028      63624    1859932   ELF Image Totals (compressed)
     100392       7022      10944       2028          0          0   ROM Totals
 
 ==============================================================================
