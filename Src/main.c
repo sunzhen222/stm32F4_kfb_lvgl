@@ -39,6 +39,7 @@ uint8_t uart1_rx_byte;
 
 void StartDefaultTask(void *argument);
 
+//__2
 int main(void)
 {
     HAL_Init();
