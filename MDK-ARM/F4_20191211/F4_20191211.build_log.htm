@@ -27,10 +27,18 @@ Project File Date:  12/30/2019
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'stm32f4'
+compiling LvglTask.c...
+..\tasks\LvglTask.c(28): warning:  #167-D: argument of type "lv_coord_t *" is incompatible with parameter of type "uint16_t *"
+      if(data->state == LV_INDEV_STATE_PR) TouchGetXY_Pos(&last_x, &last_y);
+..\tasks\LvglTask.c(28): warning:  #167-D: argument of type "lv_coord_t *" is incompatible with parameter of type "uint16_t *"
+      if(data->state == LV_INDEV_STATE_PR) TouchGetXY_Pos(&last_x, &last_y);
+..\tasks\LvglTask.c(68): warning:  #513-D: a value of type "_Bool (*)(lv_indev_t *, lv_indev_data_t *)" cannot be assigned to an entity of type "_Bool (*)(struct _lv_indev_drv_t *, lv_indev_data_t *)"
+      indev_drv.read_cb = my_touchpad_read; /*Set your driver function*/
+..\tasks\LvglTask.c: 3 warnings, 0 errors
 linking...
-Program Size: Code=100392 RO-data=10944 RW-data=4192 ZI-data=63624  
+Program Size: Code=100404 RO-data=10944 RW-data=4196 ZI-data=63620  
 FromELF: creating hex file...
-"F4_20191211\F4_20191211.axf" - 0 Error(s), 0 Warning(s).
+"F4_20191211\F4_20191211.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -53,7 +61,7 @@ Package Vendor: Keil
 <h2>Collection of Component Files used:</h2>
 
    * Component: ARM::CMSIS:CORE:5.1.1
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

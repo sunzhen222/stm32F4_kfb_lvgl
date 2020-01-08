@@ -11,6 +11,7 @@
 static lv_disp_buf_t disp_buf;
 static lv_color_t buf[LV_HOR_RES_MAX * 10];             /*Declare a buffer for 10 lines*/
 
+uint8_t lv_init_ok = 0;
 
 void my_disp_flush(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p)
 {
@@ -97,6 +98,7 @@ void LvglTask(void *pvParameters)
     lv_label_set_text(dr, "0");
 
     
+    lv_init_ok = 1;
     while(1) {
         lv_task_handler();
         lv_tick_inc(5);
