@@ -1,0 +1,4 @@
+---- demo_create Matches (3 in 3 files) ----
+LvglTask in LvglTask.c (tasks) :     demo_create();
+LV_IMG_DECLARE in lvgl_demo.c (lvgl) : void demo_create(void)
+lvgl_demo.h (lvgl) line 5 : void demo_create(void);
